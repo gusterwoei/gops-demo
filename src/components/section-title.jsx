@@ -10,15 +10,15 @@ export default class SectionTitle extends Component {
                 <div style={{
                     fontWeight: 'bold',
                     fontSize: '21px',
-                    marginBottom: '20px',
+                    marginBottom: '10px',
                 }}>
                     <span style={{
                         color: this.props.titleColor || '#383838',
-                        paddingRight: '3px'
-                    }}>{this.props.title}</span>
+                        paddingRight: '4px'
+                    }}>{this.props.title.toUpperCase()}</span>
                     <span style={{
                         color: COLOR_GREEN
-                    }}>{this.props.lastWord}</span>
+                    }}>{this.props.lastWord.toUpperCase()}</span>
                 </div>
 
                 {/* subtitle */}
