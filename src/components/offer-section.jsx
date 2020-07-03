@@ -28,9 +28,7 @@ export default class OfferSection extends Component {
 
     render() {
         return (
-            <div
-                className='text-center'
-                style={{ marginTop: '80px', marginBottom: '97px' }}>
+            <div style={{ marginTop: '80px', marginBottom: '97px' }}>
                 <SectionTitle
                     title='WHAT WE'
                     lastWord='OFFER'

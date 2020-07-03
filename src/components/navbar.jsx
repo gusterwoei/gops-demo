@@ -42,15 +42,15 @@ export default class NavBar extends Component {
                         {this.state.menu.map(item =>
                             <NavButton
                                 key={item.text}
-                                className="nav-item"
+                                className="nav-item mr-1"
                                 active={item.active}>
                                 {item.text}
                             </NavButton>
                         )}
                     </div>
+                    <i className='fa fa-search' style={{color: COLOR_GREEN}} />
                 </div>
             </nav>
-
         )
     }
 }
@@ -59,16 +59,26 @@ class NavButton extends Component {
     render() {
         return (
             <div
-                className={this.props.className}
+                className={`nav-button ${this.props.className}`}
                 style={{
                     padding: '16px',
-                    color: this.props.active ? 'white' : COLOR_GREY,
                     borderRadius: '5px',
-                    backgroundColor: this.props.active ? COLOR_GREEN : 'transparent',
                     fontWeight: 'bold',
+                    fontSize: '16px',
+                    cursor: 'pointer',
                     ...this.props
                 }}>
                 {this.props.children}
+
+                <style jsx>{`
+                    .nav-button {
+                        color: ${COLOR_GREY};
+                    }
+                    .nav-button:hover {
+                        background-color: ${COLOR_GREEN};
+                        color: white;
+                    }
+                `}</style>
             </div>
         )
     }

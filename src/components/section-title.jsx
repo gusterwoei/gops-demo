@@ -5,7 +5,10 @@ import { COLOR_GREEN } from '../utils'
 export default class SectionTitle extends Component {
     render() {
         return (
-            <div style={this.props.style}>
+            <div style={{
+                textAlign: 'center',
+                ...this.props.style
+            }}>
                 {/* title */}
                 <div style={{
                     fontWeight: 'bold',

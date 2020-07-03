@@ -6,7 +6,7 @@ export default class Banner extends Component {
             <div>
                 <img 
                     src='/images/home.png'
-                    srcset="/images/home@2x.png 2x,/images/home@3x.png 3x"
+                    srcSet="/images/home@2x.png 2x,/images/home@3x.png 3x"
                     style={{
                         width: '100%',
                         height: '750px',
