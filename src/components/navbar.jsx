@@ -20,9 +20,11 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <div className='d-flex align-items-center p-4'>
-                <img 
-                    className='flex-grow-1 mr-auto' 
+            <div
+                className='d-flex align-items-center p-4'
+                style={{ backgroundColor: '#f9f9f9' }}>
+                <img
+                    className='flex-grow-1 mr-auto'
                     src='/images/logo.png'
                     width='60px'
                     height='60px' />
