@@ -3,7 +3,10 @@ import Banner from '../components/banner'
 import NavBar from '../components/navbar'
 import OfferSection from '../components/offer-section'
 import SkillSection from '../components/skill-section'
-import ContactSection from '../components/contact-section'
+import EmployeeSection from '../components/employee-section'
+import RegistrationForm from '../components/registration-form'
+import TestimonySection from '../components/testimony-section'
+import Footer from '../components/footer'
 
 export default function Home() {
     return (
@@ -23,7 +26,10 @@ export default function Home() {
                 <NavBar />
                 <OfferSection />
                 <SkillSection />
-                <ContactSection />
+                <EmployeeSection />
+                <RegistrationForm />
+                <TestimonySection />
+                <Footer />
             </div>
         </div>
     )

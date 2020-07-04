@@ -44,12 +44,11 @@ class SkillLevels extends Component {
 
                     <div
                         className='row justify-content-center text-center'
-                        style={{ margin: '50px 0px 0px 0px' }}>
+                        style={{ margin: '30px 0px 0px 0px' }}>
                         {this.state.skills.map(item =>
                             <div
                                 key={item.title}
-                                className='m-4'
-                                style={{ width: 100, height: 100 }}>
+                                style={{ width: 100, height: 100, margin: '30px' }}>
                                 <CircularProgressbarWithChildren
                                     value={item.percentage}
                                     styles={{
@@ -76,9 +75,10 @@ class SkillLevels extends Component {
                                     }}>
                                     <div style={{ fontSize: 16, marginTop: -20, color: '#e4e4e4', fontWeight: 'bold' }}>
                                         {item.percentage}%
-                                </div>
+                                    </div>
                                 </CircularProgressbarWithChildren>
 
+                                {/* skill title */}
                                 <div style={{
                                     color: '#8a8a8a',
                                     lineHeight: '16px',
@@ -135,7 +135,7 @@ class Features extends Component {
         return (
             <div
                 className='d-flex flex-wrap justify-content-center'
-                style={{ margin: '71px auto 94px auto', maxWidth: '1200px' }}>
+                style={{ margin: '71px auto 94px auto', maxWidth: '1300px' }}>
                 {this.state.features.map(item =>
                     <FeatureItem
                         key={item.title}
@@ -162,7 +162,6 @@ class FeatureItem extends Component {
 
                 <style jsx>{`
                     .feature-item-title {
-                        height: 11px;
                         font-size: 14px;
                         font-weight: bold;
                         text-align: left;
@@ -171,7 +170,7 @@ class FeatureItem extends Component {
                     .feature-item-subtitle {
                         font-size: 12px;
                         font-weight: 500;
-                        margin-top: 10px;
+                        margin-top: 3px;
                         text-align: left;
                         color: #aaaaaa;
                     }

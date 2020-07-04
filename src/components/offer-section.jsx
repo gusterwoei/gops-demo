@@ -8,17 +8,17 @@ export default class OfferSection extends Component {
         this.state = {
             data: [
                 {
-                    icon: 'images/logo.png',
+                    icon: 'images/offer-1.png',
                     title: 'responsive & multipurpose',
                     subtitle: 'Proin in magna a ipsum viverra scelerisq enec turp, Nunc vestibulum fringilla accumsan ornare quis.',
                 },
                 {
-                    icon: 'images/logo.png',
+                    icon: 'images/offer-2.png',
                     title: 'easy customization',
                     subtitle: 'Proin in magna a ipsum viverra scelerisq enec turp, Nunc vestibulum fringilla accumsan ornare quis.',
                 },
                 {
-                    icon: 'images/logo.png',
+                    icon: 'images/offer-3.png',
                     title: 'awesome friendly support',
                     subtitle: 'Proin in magna a ipsum viverra scelerisq enec turp, Nunc vestibulum fringilla accumsan ornare quis.',
                 },
@@ -34,7 +34,9 @@ export default class OfferSection extends Component {
                     lastWord='OFFER'
                     subtitle='We offer our customers the best services & solutions, this is our main services list' />
 
-                <div className='row' style={{ margin: '50px 0px 0px 0px' }}>
+                <div 
+                    className='row mr-auto ml-auto' 
+                    style={{ margin: '50px 0px 0px 0px', maxWidth: '1300px' }}>
                     {this.state.data.map(item =>
                         <OfferSectionItem
                             key={item.title}
@@ -54,20 +56,15 @@ class OfferSectionItem extends Component {
         return (
             <div
                 className='d-flex flex-column align-items-center p-1'
-                style={{
-                    maxWidth: '369px',
-                    margin: 'auto',
-                    padding: '0px 32px'
-                }}>
+                style={{ maxWidth: '369px', margin: 'auto', padding: '0px 32px' }}>
                 <img
                     src={this.props.icon}
                     style={{
                         width: '100px',
                         height: '100px',
                         objectFit: 'contain',
-                    }}
-                // srcset="img/icon@2x.png 2x,img/icon@3x.png 3x"
-                />
+                        borderRadius: '100px'
+                    }}/>
                 <div style={{
                     fontSize: '14px',
                     color: COLOR_GREY,
@@ -88,7 +85,7 @@ class OfferSectionItem extends Component {
                     border: '1px solid #dedede',
                     borderRadius: '5px',
                     fontSize: '10px',
-                    color: '8a8a8a',
+                    color: '#8a8a8a',
                     textAlign: 'center',
                     cursor: 'pointer',
                     lineHeight: '29px'

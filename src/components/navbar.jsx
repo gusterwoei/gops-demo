@@ -20,37 +20,41 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <nav
-                className="d-flex align-items-center p-4 navbar navbar-expand-lg navbar-light bg-light"
-                style={{ backgroundColor: '#f9f9f9' }}>
+            <div style={{ backgroundColor: '#f9f9f9' }}>
+                <nav
+                    className="d-flex align-items-center m-auto p-4 navbar navbar-expand-lg navbar-light"
+                    style={{ maxWidth: '1300px' }}>
 
-                <img
-                    className='flex-grow-1 mr-auto'
-                    src='/images/logo.png'
-                    width='60px'
-                    height='60px' />
+                    {/* app logo */}
+                    <img
+                        className='flex-grow-1 mr-auto'
+                        src='/images/logo.png'
+                        width='60px'
+                        height='60px' />
 
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                <div
-                    className="row mr-2 collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                    style={{ flexGrow: 0 }}>
-                    <div className="navbar-nav">
-                        {this.state.menu.map(item =>
-                            <NavButton
-                                key={item.text}
-                                className="nav-item mr-1"
-                                active={item.active}>
-                                {item.text}
-                            </NavButton>
-                        )}
+                    {/* menu items */}
+                    <div
+                        className="row mr-2 collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                        style={{ flexGrow: 0 }}>
+                        <div className="navbar-nav">
+                            {this.state.menu.map(item =>
+                                <NavButton
+                                    key={item.text}
+                                    className="nav-item mr-1"
+                                    active={item.active}>
+                                    {item.text}
+                                </NavButton>
+                            )}
+                        </div>
+                        {/* <i className='fa fa-search' style={{color: COLOR_GREEN}} /> */}
                     </div>
-                    <i className='fa fa-search' style={{color: COLOR_GREEN}} />
-                </div>
-            </nav>
+                </nav>
+            </div>
         )
     }
 }
