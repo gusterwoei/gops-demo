@@ -54,8 +54,8 @@ class OfferSectionItem extends Component {
     render() {
         return (
             <div
-                className='d-flex flex-column align-items-center p-1'
-                style={{ maxWidth: '369px', margin: 'auto', padding: '0px 32px' }}>
+                className='d-flex flex-column align-items-center'
+                style={{ maxWidth: '369px', margin: 'auto', padding: '0px 20px' }}>
                 <img
                     src={this.props.icon}
                     style={{
@@ -74,6 +74,8 @@ class OfferSectionItem extends Component {
                     fontSize: '14px',
                     color: '#7a7a7a',
                     lineHeight: '24px',
+                    textAlign: 'center',
+                    // maxWidth: '350px',
                     marginBottom: '20px',
                 }}>{this.props.subtitle}</div>
 

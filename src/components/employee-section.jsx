@@ -7,10 +7,34 @@ export default class EmployeeSection extends Component {
         super(props)
         this.state = {
             employees: [
-                { name: 'alexis simpson', title: 'CEO & Developer', email: 'simpson@unique.com', contactNumber: '+60191234567' },
-                { name: 'steven cole', title: 'User Interface Designer', email: 'steven@unique.com', contactNumber: '+60191234567' },
-                { name: 'Frank piener', title: 'Sales Manager', email: 'frank@unique.com', contactNumber: '+60191234567' },
-                { name: 'ashley lennon', title: 'IT Specialist', email: 'ashley@unique.com', contactNumber: '+60191234567' },
+                {
+                    name: 'alexis simpson',
+                    title: 'CEO & Developer',
+                    email: 'simpson@unique.com',
+                    contactNumber: '+60191234567',
+                    photo: '/images/emp1.jpg',
+                },
+                {
+                    name: 'steven cole',
+                    title: 'User Interface Designer',
+                    email: 'steven@unique.com',
+                    contactNumber: '+60191234567',
+                    photo: '/images/emp2.jpg',
+                },
+                {
+                    name: 'Frank piener',
+                    title: 'Sales Manager',
+                    email: 'frank@unique.com',
+                    contactNumber: '+60191234567',
+                    photo: '/images/emp3.jpg',
+                },
+                {
+                    name: 'ashley lennon',
+                    title: 'IT Specialist',
+                    email: 'ashley@unique.com',
+                    contactNumber: '+60191234567',
+                    photo: '/images/emp4.jpg',
+                },
             ]
         }
     }
@@ -27,7 +51,7 @@ export default class EmployeeSection extends Component {
                     <AppButton
                         className='mr-auto ml-auto'
                         style={{ marginTop: '30px', maxWidth: '500px' }}>
-                            VIEW ALL WORKS
+                        VIEW ALL WORKS
                     </AppButton>
                 </div>
             </div>
@@ -53,10 +77,13 @@ class EmployeeItem extends Component {
                 style={{
                     width: '270px',
                     border: '#dedede solid 0.5px',
-                    // height: '410px',
                     borderRadius: '3px'
                 }}>
-                <div style={{ backgroundColor: '#8b8b8b', height: '270px' }}></div>
+                <div style={{ backgroundColor: '#8b8b8b', height: '270px' }}>
+                    <img
+                        style={{ width: '268px', height: '270px', objectFit: 'cover', borderTopLeftRadius: '3px', borderTopRightRadius: '3px' }}
+                        src={this.props.emp.photo} />
+                </div>
                 <div style={{ backgroundColor: COLOR_BLACK, height: '140px' }}>
                     <div className='emp-info'>
                         <div className='emp-name'>{this.props.emp.name.toUpperCase()}</div>
