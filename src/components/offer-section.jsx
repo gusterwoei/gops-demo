@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SectionTitle from './section-title'
-import { COLOR_GREY, COLOR_GREEN } from '../utils'
+import { COLOR_GREY, COLOR_GREEN, SECTION_MAX_WIDTH } from '../utils'
 
 export default class OfferSection extends Component {
     constructor(props) {
@@ -35,7 +35,7 @@ export default class OfferSection extends Component {
 
                 <div 
                     className='row mr-auto ml-auto' 
-                    style={{ margin: '50px 0px 0px 0px', maxWidth: '1300px' }}>
+                    style={{ margin: '50px 0px 0px 0px', maxWidth: SECTION_MAX_WIDTH }}>
                     {this.state.data.map(item =>
                         <OfferSectionItem
                             key={item.title}
@@ -75,7 +75,6 @@ class OfferSectionItem extends Component {
                     color: '#7a7a7a',
                     lineHeight: '24px',
                     textAlign: 'center',
-                    // maxWidth: '350px',
                     marginBottom: '20px',
                 }}>{this.props.subtitle}</div>
 
@@ -99,6 +98,11 @@ class OfferSectionItem extends Component {
                     .more-button:hover {
                         background-color: ${COLOR_GREEN};
                         color: white;
+                    }
+                    @media only screen and (max-width: 768px) {
+                        .more-button {
+                            margin-bottom: 30px;
+                        }
                     }
                 `}</style>
             </div>

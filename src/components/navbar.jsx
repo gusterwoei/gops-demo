@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { COLOR_GREEN, COLOR_GREY } from '../utils'
+import { COLOR_GREEN, COLOR_GREY, SECTION_MAX_WIDTH } from '../utils'
 
 export default class NavBar extends Component {
 
@@ -23,7 +23,7 @@ export default class NavBar extends Component {
             <div style={{ backgroundColor: '#f9f9f9' }}>
                 <nav
                     className="d-flex align-items-center m-auto p-4 navbar navbar-expand-lg navbar-light"
-                    style={{ maxWidth: '1300px' }}>
+                    style={{ maxWidth: SECTION_MAX_WIDTH }}>
 
                     {/* app logo */}
                     <img

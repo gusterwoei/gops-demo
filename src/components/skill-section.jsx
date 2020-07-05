@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SectionTitle from './section-title'
 import SectionIcon from './section-icon'
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
+import { SECTION_MAX_WIDTH } from '../utils';
 
 export default class SkillSection extends Component {
     render() {
@@ -136,7 +137,7 @@ class Features extends Component {
         return (
             <div
                 className='d-flex flex-wrap justify-content-center'
-                style={{ margin: '71px auto 94px auto', maxWidth: '1300px' }}>
+                style={{ margin: '71px auto 94px auto', maxWidth: SECTION_MAX_WIDTH }}>
                 {this.state.features.map(item =>
                     <FeatureItem
                         key={item.title}

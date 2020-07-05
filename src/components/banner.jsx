@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { COLOR_BLACK } from '../utils'
+import { COLOR_BLACK, SECTION_MAX_WIDTH } from '../utils'
 import SectionTitle from './section-title'
 
 export default class Banner extends Component {
@@ -16,6 +16,10 @@ export default class Banner extends Component {
                     }} /> */}
 
                 {/* new banner (without image) */}
+                <div style={{
+                    maxWidth: SECTION_MAX_WIDTH,
+                    margin: 'auto'
+                }}>
                 <div className='banner-container text-center'>
                     <div>WHAT ARE YOU WAITING FOR ?</div>
                     <div className='banner-big-title'>LET'S BE CREATIVE!</div>
@@ -37,14 +41,15 @@ export default class Banner extends Component {
                         title='start doing that' />
                     <img style={{ marginTop: '30px' }} src='/images/banner-button.png' />
                 </div>
+                </div>
 
 
                 <style jsx>{`
                     .banner-container {
-                        padding: 200px 0 200px 0;
                         max-width: 620px;
                         padding: 200px 0 200px 0;
-                        margin-left: 130px;
+                        margin-left: 50px;
+                        // margin-left: 130px;
                     }
                     .banner-big-title {
                         font-size: 65px;

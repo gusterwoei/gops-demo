@@ -7,7 +7,7 @@ export default class Footer extends Component {
             <div
                 className='text-center'
                 style={{
-                    padding: '58px 0px 27px 0px',
+                    padding: '58px 30px 27px 30px',
                     backgroundColor: '#333333',
                     fontSize: '14px',
                     color: '#cccccc'
