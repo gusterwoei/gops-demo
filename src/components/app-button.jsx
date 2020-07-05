@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { COLOR_GREEN } from '../utils'
+import { COLOR_GREEN, COLOR_GREY } from '../utils'
 
 export default class AppButton extends Component {
     render() {
@@ -12,18 +12,18 @@ export default class AppButton extends Component {
                     fontSize: '13px',
                     color: '#e4e4e4',
                     textAlign: 'center',
-                    cursor: 'pointer',
+                    cursor: this.props.disabled ? 'not-allowed' : 'pointer',
                     ...this.props.style
                 }}
-                onClick={this.props.onClick}>
+                onClick={this.props.disabled ? null : this.props.onClick}>
                 {this.props.children}
 
                 <style jsx>{`
                     .app-button {
-                        background-color: ${COLOR_GREEN};
+                        background-color: ${this.props.disabled ? COLOR_GREY : COLOR_GREEN};
                     }
                     .app-button:hover {
-                        background-color: #06968a;
+                        background-color: ${this.props.disabled ? COLOR_GREY : '#06968a'};
                     }
                 `}</style>
             </div>

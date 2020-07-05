@@ -82,6 +82,9 @@ class NavButton extends Component {
                         background-color: ${COLOR_GREEN};
                         color: white;
                     }
+                    @media only screen and (max-width: 768px) {
+                        margin-top: 10px;
+                    }
                 `}</style>
             </div>
         )

@@ -30,8 +30,7 @@ export default class OfferSection extends Component {
         return (
             <div style={{ marginTop: '80px', marginBottom: '97px' }}>
                 <SectionTitle
-                    title='WHAT WE'
-                    lastWord='OFFER'
+                    title='WHAT WE OFFER'
                     subtitle='We offer our customers the best services & solutions, this is our main services list' />
 
                 <div 

@@ -1,8 +1,60 @@
 import React, { Component } from 'react'
 import AppButton from './app-button'
+import firebase from 'firebase'
+import update from 'immutability-helper';
 
 export default class RegistrationForm extends Component {
-    submit() {}
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            loading: false,
+            data: {
+                name: '',
+                email: '',
+                occupation: 'Graphics Designer',
+                phone: '',
+                message: ''
+            }
+        }
+    }
+
+    updateForm(field, value) {
+        let data = update(this.state.data, {
+            [field]: {
+                $set: value
+            }
+        })
+        this.setState({ data })
+    }
+
+    submit() {
+        console.log('data', this.state.data)
+        if (this.state.data.name == '') return
+        if (this.state.data.email == '') return
+        if (this.state.data.occupation == '') return
+        if (this.state.data.phone == '') return
+        if (this.state.data.message == '') return
+        
+        this.setState({ loading: true })
+
+        let db = firebase.firestore()
+        db.collection('forms').add(this.state.data).then(res => {
+            this.setState({
+                loading: false,
+                data: {
+                    name: '',
+                    email: '',
+                    occupation: 'Graphics Designer',
+                    phone: '',
+                    message: ''
+                }
+            })
+            alert('Thanks for submitting!')
+        }).catch(err => {
+            this.setState({ loading: false })
+        })
+    }
 
     render() {
         return (
@@ -23,10 +75,22 @@ export default class RegistrationForm extends Component {
                             <div className='col'>
                                 <div className='row'>
                                     <div className='col-md-6'>
-                                        <input className='form-control' placeholder='Name' />
+                                        <input
+                                            className='form-control'
+                                            placeholder='Name'
+                                            value={this.state.data.name}
+                                            onChange={e => {
+                                                this.updateForm('name', e.target.value)
+                                            }} />
                                     </div>
                                     <div className='col-md-6 occupation'>
-                                        <select className='form-control' placeholder='Occupation'>
+                                        <select
+                                            className='form-control'
+                                            placeholder='Occupation'
+                                            value={this.state.data.occupation}
+                                            onChange={e => {
+                                                this.updateForm('occupation', e.target.value)
+                                            }}>
                                             <option value='Graphics Designer'>Graphics Designer</option>
                                             <option value='Software Engineer'>Software Engineer</option>
                                             <option value='Project Manager'>Project Manager</option>
@@ -37,15 +101,36 @@ export default class RegistrationForm extends Component {
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-6'>
-                                        <input className='form-control' type='email' placeholder='Email Address' />
+                                        <input
+                                            className='form-control'
+                                            type='email'
+                                            value={this.state.data.email}
+                                            placeholder='Email Address'
+                                            onChange={e => {
+                                                this.updateForm('email', e.target.value)
+                                            }} />
                                     </div>
                                     <div className='col-md-6'>
-                                        <input className='form-control contactno' type='phone' placeholder='Contact No' />
+                                        <input
+                                            className='form-control contactno'
+                                            type='phone'
+                                            placeholder='Contact No'
+                                            value={this.state.data.phone}
+                                            onChange={e => {
+                                                this.updateForm('phone', e.target.value)
+                                            }} />
                                     </div>
                                 </div>
                                 <div className='row'>
                                     <div className='col-md-6'>
-                                        <textarea className='form-control' placeholder='Message...' rows={3} />
+                                        <textarea
+                                            className='form-control'
+                                            placeholder='Message...'
+                                            value={this.state.data.message}
+                                            rows={3}
+                                            onChange={e => {
+                                                this.updateForm('message', e.target.value)
+                                            }} />
                                     </div>
                                     <div className='col-md-6'>
                                     </div>
@@ -53,8 +138,9 @@ export default class RegistrationForm extends Component {
                                 <AppButton
                                     className='mt-4'
                                     style={{ maxWidth: '330px' }}
+                                    disabled={this.state.loading}
                                     onClick={() => this.submit()}>
-                                    SUBMIT MESSAGE
+                                    {this.state.loading ? 'Submitting...' : 'SUBMIT MESSAGE'}
                                 </AppButton>
                             </div>
                         </div>

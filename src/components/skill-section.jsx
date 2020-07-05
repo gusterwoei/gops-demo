@@ -39,8 +39,7 @@ class SkillLevels extends Component {
 
                 <div style={{ paddingTop: '77px', paddingBottom: '70px', backgroundColor: '#383838' }}>
                     <SectionTitle
-                        title='our powerful'
-                        lastWord='skills'
+                        title='our powerful skills'
                         titleColor='#e4e4e4'
                         subtitle='We offer our customers the best services & solutions, this is our main services list' />
 
