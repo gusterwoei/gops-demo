@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import { COLOR_GREEN, COLOR_BLACK } from '../utils'
+import SectionIcon from './section-icon'
 
 export default class TestimonySection extends Component {
     constructor(props) {
@@ -14,6 +15,7 @@ export default class TestimonySection extends Component {
     render() {
         return (
             <div>
+                <SectionIcon src='/images/testi-section-icon.png' />
                 <div style={{
                     padding: '77px 0 50px 0',
                     backgroundColor: COLOR_GREEN

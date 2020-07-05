@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SectionTitle from './section-title'
-import { COLOR_GREY } from '../utils'
+import { COLOR_GREY, COLOR_GREEN } from '../utils'
 
 export default class OfferSection extends Component {
     constructor(props) {
@@ -79,17 +79,27 @@ class OfferSectionItem extends Component {
                 }}>{this.props.subtitle}</div>
 
                 {/* button */}
-                <div style={{
-                    width: '80px',
-                    height: '29px',
-                    border: '1px solid #dedede',
-                    borderRadius: '5px',
-                    fontSize: '10px',
-                    color: '#8a8a8a',
-                    textAlign: 'center',
-                    cursor: 'pointer',
-                    lineHeight: '29px'
-                }}>READ MORE</div>
+                <div className='more-button'>READ MORE</div>
+
+
+                <style jsx>{`
+                    .more-button {
+                        width: 80px;
+                        height: 29px;
+                        border: 1px solid #dedede;
+                        border-radius: 5px;
+                        font-size: 10px;
+                        text-align: center;
+                        cursor: pointer;
+                        line-height: 29px;
+                        background-color: transparent;
+                        color: #8a8a8a;
+                    }
+                    .more-button:hover {
+                        background-color: ${COLOR_GREEN};
+                        color: white;
+                    }
+                `}</style>
             </div>
         )
     }

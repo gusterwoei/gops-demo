@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SectionTitle from './section-title'
+import SectionIcon from './section-icon'
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import { COLOR_GREY } from '../utils';
 
 export default class SkillSection extends Component {
     render() {
@@ -35,6 +35,8 @@ class SkillLevels extends Component {
     render() {
         return (
             <div>
+                <SectionIcon src='/images/skill-section-icon.png' />
+
                 <div style={{ paddingTop: '77px', paddingBottom: '70px', backgroundColor: '#383838' }}>
                     <SectionTitle
                         title='our powerful'
