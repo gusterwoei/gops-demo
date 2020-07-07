@@ -26,9 +26,8 @@ export default class NavBar extends Component {
                     style={{ maxWidth: SECTION_MAX_WIDTH }}>
 
                     {/* app logo */}
-                    <a href='/'>
+                    <a href='/' className='flex-grow-1 mr-auto'>
                         <img
-                            className='flex-grow-1 mr-auto'
                             src='/images/logo.png'
                             width='60px'
                             height='60px' />
