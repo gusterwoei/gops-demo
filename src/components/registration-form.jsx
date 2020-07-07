@@ -8,6 +8,7 @@ export default class RegistrationForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            count: 0,
             loading: false,
             data: {
                 name: '',
@@ -17,6 +18,29 @@ export default class RegistrationForm extends Component {
                 message: ''
             }
         }
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyB76RVjO9RPUijUvmMseUY9-GJO4NVMgWc",
+            authDomain: "growthops-demo.firebaseapp.com",
+            databaseURL: "https://growthops-demo.firebaseio.com",
+            projectId: "growthops-demo",
+            storageBucket: "growthops-demo.appspot.com",
+            messagingSenderId: "490497491338",
+            appId: "1:490497491338:web:e3112ff6bc3ddaba0fc873"
+        }
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig)
+        }
+    }
+
+    componentDidMount() {
+        let db = firebase.firestore()
+        db.collection('forms').onSnapshot(e => {
+            this.setState({
+                count: e.docs.length
+            })
+        })
     }
 
     updateForm(field, value) {
@@ -29,13 +53,10 @@ export default class RegistrationForm extends Component {
     }
 
     submit() {
-        console.log('data', this.state.data)
-        if (this.state.data.name == '') return
-        if (this.state.data.email == '') return
-        if (this.state.data.occupation == '') return
-        if (this.state.data.phone == '') return
-        if (this.state.data.message == '') return
-        
+        let form = document.getElementById('reg-form')
+        let valid = form.reportValidity()
+        if (!valid) return
+
         this.setState({ loading: true })
 
         let db = firebase.firestore()
@@ -65,7 +86,8 @@ export default class RegistrationForm extends Component {
                     padding: '89px 20px 77px 20px'
                 }}>
                     <div className='title'>Register Your Interest</div>
-                    <form>
+                    <div className='ml-3 mb-2 reg-count'>{this.state.count} persons have been registered</div>
+                    <form id='reg-form'>
                         <div
                             style={{
                                 borderRadius: '5px',
@@ -79,6 +101,7 @@ export default class RegistrationForm extends Component {
                                             className='form-control'
                                             placeholder='Name'
                                             value={this.state.data.name}
+                                            required={true}
                                             onChange={e => {
                                                 this.updateForm('name', e.target.value)
                                             }} />
@@ -88,6 +111,7 @@ export default class RegistrationForm extends Component {
                                             className='form-control'
                                             placeholder='Occupation'
                                             value={this.state.data.occupation}
+                                            required={true}
                                             onChange={e => {
                                                 this.updateForm('occupation', e.target.value)
                                             }}>
@@ -106,6 +130,7 @@ export default class RegistrationForm extends Component {
                                             type='email'
                                             value={this.state.data.email}
                                             placeholder='Email Address'
+                                            required={true}
                                             onChange={e => {
                                                 this.updateForm('email', e.target.value)
                                             }} />
@@ -116,6 +141,7 @@ export default class RegistrationForm extends Component {
                                             type='phone'
                                             placeholder='Contact No'
                                             value={this.state.data.phone}
+                                            required={true}
                                             onChange={e => {
                                                 this.updateForm('phone', e.target.value)
                                             }} />
@@ -127,6 +153,7 @@ export default class RegistrationForm extends Component {
                                             className='form-control'
                                             placeholder='Message...'
                                             value={this.state.data.message}
+                                            required={true}
                                             rows={3}
                                             onChange={e => {
                                                 this.updateForm('message', e.target.value)
@@ -138,9 +165,10 @@ export default class RegistrationForm extends Component {
                                 <AppButton
                                     className='mt-4'
                                     style={{ maxWidth: '330px' }}
+                                    loading={this.state.loading}
                                     disabled={this.state.loading}
                                     onClick={() => this.submit()}>
-                                    {this.state.loading ? 'Submitting...' : 'SUBMIT MESSAGE'}
+                                    SUBMIT MESSAGE
                                 </AppButton>
                             </div>
                         </div>
@@ -170,6 +198,10 @@ export default class RegistrationForm extends Component {
                         .occupation, .contactno {
                             margin-top: 30px;
                         }
+                    }
+                    .reg-count {
+                        font-size: 13px;
+                        font-style: italic;
                     }
                 `}</style>
             </>

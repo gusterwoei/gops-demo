@@ -38,7 +38,7 @@ export default class SectionTitle extends Component {
 
     render() {
         return (
-            <div style={{
+            <div className={this.props.className} style={{
                 textAlign: 'center',
                 ...this.props.style
             }}>
@@ -54,7 +54,7 @@ export default class SectionTitle extends Component {
                 </div>
 
                 {/* subtitle */}
-                <div style={{
+                <div className='pr-3 pl-3' style={{
                     fontSize: '16px',
                     color: '#8a8a8a',
                     lineHeight: '16px',

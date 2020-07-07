@@ -7,26 +7,8 @@ import EmployeeSection from '../components/employee-section'
 import RegistrationForm from '../components/registration-form'
 import TestimonySection from '../components/testimony-section'
 import Footer from '../components/footer'
-import { useEffect } from 'react'
-import firebase from 'firebase'
 
 export default function Home() {
-
-    useEffect(() => {
-        const firebaseConfig = {
-            apiKey: "AIzaSyB76RVjO9RPUijUvmMseUY9-GJO4NVMgWc",
-            authDomain: "growthops-demo.firebaseapp.com",
-            databaseURL: "https://growthops-demo.firebaseio.com",
-            projectId: "growthops-demo",
-            storageBucket: "growthops-demo.appspot.com",
-            messagingSenderId: "490497491338",
-            appId: "1:490497491338:web:e3112ff6bc3ddaba0fc873"
-        }
-
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig)
-        }
-    }, [])
 
     return (
         <div>
@@ -42,7 +24,7 @@ export default function Home() {
 
             <div>
                 <Banner />
-                <NavBar />
+                <NavBar id='navbar' />
                 <OfferSection />
                 <SkillSection />
                 <EmployeeSection />
@@ -50,6 +32,12 @@ export default function Home() {
                 <TestimonySection />
                 <Footer />
             </div>
+
+            <style jsx global>{`
+                html {
+                    scroll-behavior: smooth;
+                }
+            `}</style>
         </div>
     )
 }

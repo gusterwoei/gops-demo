@@ -36,7 +36,9 @@ export default class Banner extends Component {
                             reverse={true}
                             titleFontSize='26px'
                             title='start doing that' />
-                        <img style={{ marginTop: '30px' }} src='/images/banner-button.png' />
+                        <a href='#navbar'>
+                            <img style={{ marginTop: '30px' }} src='/images/banner-button.png' />
+                        </a>
                     </div>
                 </div>
 

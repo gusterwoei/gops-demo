@@ -20,17 +20,19 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <div style={{ backgroundColor: '#f9f9f9' }}>
+            <div id={this.props.id} style={{ backgroundColor: '#f9f9f9' }}>
                 <nav
                     className="d-flex align-items-center m-auto p-4 navbar navbar-expand-lg navbar-light"
                     style={{ maxWidth: SECTION_MAX_WIDTH }}>
 
                     {/* app logo */}
-                    <img
-                        className='flex-grow-1 mr-auto'
-                        src='/images/logo.png'
-                        width='60px'
-                        height='60px' />
+                    <a href='/'>
+                        <img
+                            className='flex-grow-1 mr-auto'
+                            src='/images/logo.png'
+                            width='60px'
+                            height='60px' />
+                    </a>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -51,7 +53,6 @@ export default class NavBar extends Component {
                                 </NavButton>
                             )}
                         </div>
-                        {/* <i className='fa fa-search' style={{color: COLOR_GREEN}} /> */}
                     </div>
                 </nav>
             </div>

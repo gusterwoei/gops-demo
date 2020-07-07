@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { COLOR_GREEN, COLOR_GREY } from '../utils'
+import { COLOR_GREEN, COLOR_GREY, COLOR_BLACK } from '../utils'
 
 export default class AppButton extends Component {
     render() {
@@ -16,14 +16,30 @@ export default class AppButton extends Component {
                     ...this.props.style
                 }}
                 onClick={this.props.disabled ? null : this.props.onClick}>
-                {this.props.children}
+
+                {this.props.loading ? <div className="loader" /> : this.props.children}
 
                 <style jsx>{`
                     .app-button {
-                        background-color: ${this.props.disabled ? COLOR_GREY : COLOR_GREEN};
+                        height: 39px;
+                        background-color: ${this.props.disabled ? '#76c4bd' : COLOR_GREEN};
                     }
                     .app-button:hover {
-                        background-color: ${this.props.disabled ? COLOR_GREY : '#06968a'};
+                        background-color: ${this.props.disabled ? '#76c4bd' : '#06968a'};
+                    }
+                    .loader {
+                        border: 2px solid #f3f3f3; 
+                        border-top: 2px solid ${COLOR_BLACK}; 
+                        border-radius: 50%;
+                        margin: auto;
+                        width: 20px;
+                        height: 20px;
+                        animation: spin 2s linear infinite;
+                    }
+                      
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
                     }
                 `}</style>
             </div>
