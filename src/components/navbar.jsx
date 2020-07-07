@@ -59,21 +59,9 @@ export default class NavBar extends Component {
                 </nav>
 
                 <style jsx>{`
-                    .navbar {
-                        padding: 18px;
-                    }
                     .logo {
-                        width: 60px;
-                        height: 60px;
-                    }
-                    @media screen and (max-width: 768px) {
-                        .navbar {
-                            padding: 10px;
-                        }
-                        .logo {
-                            width: 50px;
-                            height: 50px;
-                        }
+                        width: 50px;
+                        height: 50px;
                     }
                 `}</style>
             </div>
