@@ -45,14 +45,16 @@ export default class EmployeeSection extends Component {
                 <div style={{ width: '100%', margin: 'auto' }}>
                     <div className='d-flex flex-wrap justify-content-center'>
                         {this.state.employees.map((item, index) =>
-                            <EmployeeItem className='' key={item.name} emp={item} />
+                            <EmployeeItem key={item.name} emp={item} />
                         )}
                     </div>
-                    <AppButton
-                        className='mr-auto ml-auto'
-                        style={{ marginTop: '30px', maxWidth: '500px' }}>
-                        VIEW ALL WORKS
-                    </AppButton>
+                    <div className='pr-3 pl-3'>
+                        <AppButton
+                            className='mr-auto ml-auto'
+                            style={{ marginTop: '30px', maxWidth: '500px', }}>
+                            VIEW ALL WORKS
+                        </AppButton>
+                    </div>
                 </div>
             </div>
         )

@@ -5,42 +5,39 @@ import SectionTitle from './section-title'
 export default class Banner extends Component {
     render() {
         return (
-            <div style={{ backgroundImage: "linear-gradient(45deg, #ad4323, #fefda6)" }}>
-                {/* <img
-                    src='/images/home.png'
-                    srcSet="/images/home@2x.png 2x,/images/home@3x.png 3x"
-                    style={{
-                        width: '100%',
-                        height: '750px',
-                        objectFit: 'cover',
-                    }} /> */}
+            <div
+                style={{
+                    // backgroundImage: "linear-gradient(45deg, #ad4323, #fefda6)"
+                    backgroundImage: "url('/images/banner-bg.png')",
+                    backgroundSize: "cover",
+                }}>
 
                 {/* new banner (without image) */}
                 <div style={{
                     maxWidth: SECTION_MAX_WIDTH,
                     margin: 'auto'
                 }}>
-                <div className='banner-container text-center'>
-                    <div>WHAT ARE YOU WAITING FOR ?</div>
-                    <div className='banner-big-title'>LET'S BE CREATIVE!</div>
-                    <div
-                        className='pt-1 pb-1 pl-2 mt-3 banner-highlight-title'
-                        style={{
-                            backgroundColor: '#333333',
-                            color: 'white',
-                            borderRadius: '3px',
-                            fontStyle: 'italic',
-                            textAlign: 'left'
-                        }}>
-                        LOREM IPSUM DOLOR SI AMET
+                    <div className='banner-container text-center'>
+                        <div>WHAT ARE YOU WAITING FOR ?</div>
+                        <div className='banner-big-title'>LET'S BE CREATIVE!</div>
+                        <div
+                            className='pt-1 pb-1 pl-2 mt-3 banner-highlight-title'
+                            style={{
+                                backgroundColor: '#333333',
+                                color: 'white',
+                                borderRadius: '3px',
+                                fontStyle: 'italic',
+                                textAlign: 'left'
+                            }}>
+                            LOREM IPSUM DOLOR SI AMET
                     </div>
-                    <SectionTitle
-                        style={{ marginTop: '39px' }}
-                        reverse={true}
-                        titleFontSize='26px'
-                        title='start doing that' />
-                    <img style={{ marginTop: '30px' }} src='/images/banner-button.png' />
-                </div>
+                        <SectionTitle
+                            style={{ marginTop: '39px' }}
+                            reverse={true}
+                            titleFontSize='26px'
+                            title='start doing that' />
+                        <img style={{ marginTop: '30px' }} src='/images/banner-button.png' />
+                    </div>
                 </div>
 
 
@@ -49,7 +46,6 @@ export default class Banner extends Component {
                         max-width: 620px;
                         padding: 200px 0 200px 0;
                         margin-left: 50px;
-                        // margin-left: 130px;
                     }
                     .banner-big-title {
                         font-size: 65px;
