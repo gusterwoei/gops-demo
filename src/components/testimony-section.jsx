@@ -121,8 +121,8 @@ export default class TestimonySection extends Component {
                 </div>
 
                 <style jsx global>{`
-                    .carousel, .carousel-inner {
-                        height: 100%;
+                    .carousel-inner {
+                        height: 179px;
                     }
                     .carousel-wrapper {
                         transition: set-nth($carousel-transition, 1, height);
