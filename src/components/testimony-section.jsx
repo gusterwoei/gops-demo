@@ -119,6 +119,15 @@ export default class TestimonySection extends Component {
                     />
                     <PagerButton className='ml-3' left={false} hoverColor={COLOR_GREEN} />
                 </div>
+
+                <style jsx global>{`
+                    .carousel, .carousel-inner {
+                        height: 100%;
+                    }
+                    .carousel-wrapper {
+                        transition: set-nth($carousel-transition, 1, height);
+                    }
+                `}</style>
             </div>
         )
     }
