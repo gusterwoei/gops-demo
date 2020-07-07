@@ -20,14 +20,17 @@ export default class NavBar extends Component {
 
     render() {
         return (
-            <div id={this.props.id} style={{ backgroundColor: '#f9f9f9' }}>
+            <div
+                id={this.props.id} style={{ backgroundColor: '#f9f9f9' }}
+                className='sticky-top'>
                 <nav
-                    className="d-flex align-items-center m-auto p-4 navbar navbar-expand-lg navbar-light"
+                    className="d-flex align-items-center m-auto navbar navbar-expand-lg navbar-light"
                     style={{ maxWidth: SECTION_MAX_WIDTH }}>
 
                     {/* app logo */}
                     <a href='/' className='flex-grow-1 mr-auto'>
                         <img
+                            className='logo'
                             src='/images/logo.png'
                             width='60px'
                             height='60px' />
@@ -54,6 +57,25 @@ export default class NavBar extends Component {
                         </div>
                     </div>
                 </nav>
+
+                <style jsx>{`
+                    .navbar {
+                        padding: 18px;
+                    }
+                    .logo {
+                        width: 60px;
+                        height: 60px;
+                    }
+                    @media screen and (max-width: 768px) {
+                        .navbar {
+                            padding: 10px;
+                        }
+                        .logo {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                `}</style>
             </div>
         )
     }

@@ -46,6 +46,7 @@ export default class TestimonySection extends Component {
                     {/* testimonials */}
                     <div className='d-flex justify-content-center text-center'>
                         <Carousel
+                            autoPlay={false}
                             activeIndex={this.state.activeIndex}
                             next={() => this.next()}
                             previous={() => this.prev()}>
@@ -74,7 +75,6 @@ export default class TestimonySection extends Component {
 
                                         {/* testimony say */}
                                         <div style={{
-                                            // lineHeight: '34px',
                                             fontSize: '20px',
                                             fontWeight: 200,
                                             marginTop: '30px',
