@@ -74,8 +74,8 @@ export default class TestimonySection extends Component {
 
                                         {/* testimony say */}
                                         <div style={{
+                                            // lineHeight: '34px',
                                             fontSize: '20px',
-                                            lineHeight: '34px',
                                             fontWeight: 200,
                                             marginTop: '30px',
                                             maxWidth: '1129px',
@@ -94,7 +94,7 @@ export default class TestimonySection extends Component {
                     </div>
 
                     {/* view pager navigation */}
-                    <div className='row justify-content-center' style={{ margin: '0px' }}>
+                    <div className='row justify-content-center mt-2' style={{ margin: '0px' }}>
                         <PagerButton
                             className='mr-1'
                             left={true}
