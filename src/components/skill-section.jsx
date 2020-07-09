@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import SectionTitle from './section-title'
 import SectionIcon from './section-icon'
 import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
-import { SECTION_MAX_WIDTH } from '../utils';
+import { SECTION_MAX_WIDTH, COLOR_GREY } from '../utils';
 
 export default class SkillSection extends Component {
     render() {
@@ -108,26 +108,32 @@ class Features extends Component {
         this.state = {
             features: [{
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-desktop',
                 title: 'responsive & multipurpose',
                 subtitle: 'Desktops, Tablets & Phones',
             }, {
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-puzzle-piece',
                 title: 'easy customization',
                 subtitle: 'One Click Demo Content Installation',
             }, {
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-star',
                 title: 'unlimited features',
                 subtitle: 'Shortcodes, Typography & Different Layouts',
             }, {
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-file-text',
                 title: 'clean & modular coding',
                 subtitle: '100% Clean, Valid & Well-Commented Coding',
             }, {
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-shopping-cart',
                 title: 'the best e-commerce solutions',
                 subtitle: 'WooCommerce Fully Integration',
             }, {
                 icon: '/images/icon.png',
+                faIcon: 'fa fa-info-circle',
                 title: 'awesome friendly support',
                 subtitle: 'Free Lifetime Support & Updates',
             },]
@@ -142,6 +148,7 @@ class Features extends Component {
                     <FeatureItem
                         key={item.title}
                         icon={item.icon}
+                        faIcon={item.faIcon}
                         title={item.title}
                         subtitle={item.subtitle}
                     />
@@ -155,7 +162,17 @@ class FeatureItem extends Component {
     render() {
         return (
             <div className='d-flex p-3' style={{ width: '338px' }}>
-                <img style={{ marginRight: '19px' }} src={this.props.icon} width='50px' height='70px' />
+                <div style={{ marginRight: '19px', position: 'relative' }} >
+                    <img src={this.props.icon} width='40px' height='70px' />
+                    <span style={{
+                        color: '#e4e4e4',
+                        position: 'absolute',
+                        top: 0,
+                        left: '50%',
+                        transform: 'translate(-50%, 60%)',
+                        fontSize: '19px'
+                    }} className={this.props.faIcon} />
+                </div>
                 <div>
                     <div className='feature-item-title'>{this.props.title.toUpperCase()}</div>
                     <div className='feature-item-subtitle'>{this.props.subtitle}</div>
